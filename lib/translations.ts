@@ -172,7 +172,7 @@ export const translations = {
         {
           role: 'Full Stack Developer | PHP Laravel Vue.js',
           company: 'ShipSmart Global',
-          period: 'Jun 2025 - Presente',
+          period: 'Jun 2025 - Presente (1 ano 2 meses)',
           location: 'Remoto',
           points: [
             'Desenvolvimento e escala de aplicações web com Laravel (PHP) e Vue.js.',
@@ -185,7 +185,7 @@ export const translations = {
         {
           role: 'AI Full Stack Developer',
           company: 'Freelance & Consultoria',
-          period: 'Jul 2025 - Presente',
+          period: 'Jul 2025 - Presente (1 ano 1 mês)',
           location: 'Remoto',
           points: [
             'Desenvolvimento de aplicações de IA Generativa com Python, Node.js, LangChain, OpenAI APIs, AI Agents e RAG.',
@@ -196,7 +196,7 @@ export const translations = {
         {
           role: 'Full Stack Software Engineer',
           company: 'Merlion IT',
-          period: 'Ago 2024 - Jun 2025',
+          period: 'Ago 2024 - Jun 2025 (11 meses)',
           location: 'Remoto',
           points: [
             'Desenvolvimento com Laravel, Vue.js, Livewire, React.js, MySQL, PostgreSQL e Docker.',
@@ -207,7 +207,7 @@ export const translations = {
         {
           role: 'Software Developer',
           company: 'SISMETRO',
-          period: 'Out 2022 - Ago 2024',
+          period: 'Out 2022 - Ago 2024 (1 ano 11 meses)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
             'Desenvolvimento full stack com Vue.js, PHP, Laravel, Flutter, Spring Boot, MySQL e PostgreSQL.',
@@ -216,28 +216,28 @@ export const translations = {
           ],
         },
         {
-          role: 'Developer Freelancer',
+          role: 'Developer Freelancer | PHP | Javascript',
           company: 'Freelancer',
-          period: 'Jun 2021 - Out 2022',
+          period: 'Jun 2021 - Out 2022 (1 ano 5 meses)',
           location: 'Remoto',
           points: [
             'Desenvolvimento web frontend e backend com PHP, JavaScript, Bootstrap e Context API.',
           ],
         },
         {
-          role: 'Customer Success',
+          role: 'Customer Success & Suporte ERP',
           company: 'tryideas',
-          period: 'Mar 2021 - Set 2022',
+          period: 'Mar 2021 - Set 2022 (1 ano 7 meses)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
-            'Atendimento e treinamento de clientes, suporte a sistemas ERP.',
-            'Venda de planos, máquinas virtuais (VM) e criação de relatórios em SQL.',
+            'Atendimento e treinamento de clientes, suporte a sistemas ERP e consultoria para e-commerce.',
+            'Elaboração de relatórios em SQL e suporte a vendas de planos e máquinas virtuais (VM).',
           ],
         },
         {
           role: 'Consultor de E-commerce',
           company: 'Tiago\'s Assessoria',
-          period: 'Set 2019 - Set 2022',
+          period: 'Set 2019 - Set 2022 (3 anos 1 mês)',
           location: 'Paraná, Brasil',
           points: [
             'Consultoria em e-commerce, estruturação, definição de persona, seleção de transportadoras e integrações.',
@@ -246,7 +246,7 @@ export const translations = {
         {
           role: 'Sócio Proprietário',
           company: 'AumentaVenda',
-          period: 'Jan 2019 - Mar 2021',
+          period: 'Jan 2019 - Mar 2021 (2 anos 3 meses)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
             'Atuação em marketplaces: Americanas, Submarino, Magalu, Centauro, Ponto Frio.',
@@ -256,17 +256,17 @@ export const translations = {
         {
           role: 'Sócio Proprietário',
           company: 'DBestShop',
-          period: 'Jul 2010 - Dez 2018',
+          period: 'Jul 2010 - Dez 2018 (8 anos 6 meses)',
           location: 'Paraná, Brasil',
           points: [
-            'Gestão estratégica, financeira e administrativa de plataforma de e-commerce em VTEX.',
+            'Gestão estratégica, financeira e administrativa de plataforma de e-commerce própria em VTEX.',
             'Coordenação de equipe, controle de vendas, marketing digital, suporte de TI e rotinas fiscais.',
           ],
         },
         {
           role: 'Assistente Administrativo',
           company: 'Livrarias Globo',
-          period: 'Jan 2005 - Jun 2010',
+          period: 'Jan 2005 - Jun 2010 (5 anos 6 meses)',
           location: 'Paraná, Brasil',
           points: [
             'Serviços administrativos, atendimento ao cliente, caixa, suporte financeiro e fiscal em licitações.',
@@ -519,7 +519,7 @@ export const translations = {
         {
           role: 'Full Stack Developer | PHP Laravel Vue.js',
           company: 'ShipSmart Global',
-          period: 'Jun 2025 - Present',
+          period: 'Jun 2025 - Present (1 yr 2 mos)',
           location: 'Remote',
           points: [
             'Building and scaling web applications using Laravel (PHP) and Vue.js.',
@@ -532,7 +532,7 @@ export const translations = {
         {
           role: 'AI Full Stack Developer',
           company: 'Freelance & Consulting',
-          period: 'Jul 2025 - Present',
+          period: 'Jul 2025 - Present (1 yr 1 mo)',
           location: 'Remote',
           points: [
             'Developing Generative AI applications with Python, Node.js, LangChain, OpenAI APIs, AI Agents, and RAG.',
@@ -543,7 +543,7 @@ export const translations = {
         {
           role: 'Full Stack Software Engineer',
           company: 'Merlion IT',
-          period: 'Aug 2024 - Jun 2025',
+          period: 'Aug 2024 - Jun 2025 (11 mos)',
           location: 'Remote',
           points: [
             'Development with Laravel, Vue.js, Livewire, React.js, MySQL, PostgreSQL, and Docker.',
@@ -554,7 +554,7 @@ export const translations = {
         {
           role: 'Software Developer',
           company: 'SISMETRO',
-          period: 'Oct 2022 - Aug 2024',
+          period: 'Oct 2022 - Aug 2024 (1 yr 11 mos)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
             'Full stack development with Vue.js, PHP, Laravel, Flutter, Spring Boot, MySQL, and PostgreSQL.',
@@ -563,18 +563,18 @@ export const translations = {
           ],
         },
         {
-          role: 'Developer Freelancer',
+          role: 'Developer Freelancer | PHP | Javascript',
           company: 'Freelancer',
-          period: 'Jun 2021 - Oct 2022',
+          period: 'Jun 2021 - Oct 2022 (1 yr 5 mos)',
           location: 'Remote',
           points: [
             'Web development with PHP, JavaScript, Bootstrap, and Context API.',
           ],
         },
         {
-          role: 'Customer Success',
+          role: 'Customer Success & ERP Support',
           company: 'tryideas',
-          period: 'Mar 2021 - Sep 2022',
+          period: 'Mar 2021 - Sep 2022 (1 yr 7 mos)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
             'Customer service and training, ERP system support.',
@@ -584,7 +584,7 @@ export const translations = {
         {
           role: 'E-commerce Consultant',
           company: 'Tiago\'s Assessoria',
-          period: 'Sep 2019 - Sep 2022',
+          period: 'Sep 2019 - Sep 2022 (3 yrs 1 mo)',
           location: 'Paraná, Brazil',
           points: [
             'E-commerce consulting, structuring, persona definition, carrier selection, and integrations.',
@@ -593,7 +593,7 @@ export const translations = {
         {
           role: 'Owner & Partner',
           company: 'AumentaVenda',
-          period: 'Jan 2019 - Mar 2021',
+          period: 'Jan 2019 - Mar 2021 (2 yrs 3 mos)',
           location: 'Marechal Cândido Rondon, PR',
           points: [
             'Marketplace operations: Americanas, Submarino, Magalu, Centauro, Ponto Frio.',
@@ -603,7 +603,7 @@ export const translations = {
         {
           role: 'Owner & Partner',
           company: 'DBestShop',
-          period: 'Jul 2010 - Dec 2018',
+          period: 'Jul 2010 - Dec 2018 (8 yrs 6 mos)',
           location: 'Paraná, Brazil',
           points: [
             'Strategic, financial, and administrative management of e-commerce platform on VTEX.',
@@ -613,7 +613,7 @@ export const translations = {
         {
           role: 'Administrative Assistant',
           company: 'Livrarias Globo',
-          period: 'Jan 2005 - Jun 2010',
+          period: 'Jan 2005 - Jun 2010 (5 yrs 6 mos)',
           location: 'Paraná, Brazil',
           points: [
             'Administrative services, customer service, cashier, financial assistance, and tender support.',
