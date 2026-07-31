@@ -218,7 +218,7 @@ export const translations = {
         {
           role: 'Developer Freelancer | PHP | Javascript',
           company: 'Freelancer',
-          period: 'Jun 2021 - Out 2022 (1 ano 5 meses)',
+          period: 'Jun 2019 - Presente',
           location: 'Remoto',
           points: [
             'Desenvolvimento web frontend e backend com PHP, JavaScript, Bootstrap e Context API.',
@@ -565,7 +565,7 @@ export const translations = {
         {
           role: 'Developer Freelancer | PHP | Javascript',
           company: 'Freelancer',
-          period: 'Jun 2021 - Oct 2022 (1 yr 5 mos)',
+          period: 'Jun 2019 - Present',
           location: 'Remote',
           points: [
             'Web development with PHP, JavaScript, Bootstrap, and Context API.',
