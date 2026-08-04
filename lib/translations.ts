@@ -22,7 +22,7 @@ export const translations = {
       ctaSecondary: 'Ver Meus Projetos',
       stats: [
         { number: '+6 Anos', label: 'de Experiência' },
-        { number: '2 SaaS', label: 'Próprios no Ar' },
+        { number: '3 Plataformas', label: 'Ativas no Ar' },
         { number: '+20 Projetos', label: 'Entregues' },
         { number: '100% SEO', label: 'Performance & Escala' },
       ],
@@ -49,6 +49,15 @@ export const translations = {
           description: 'Ferramenta de automação de daily logs e standups para times de tecnologia. Simplifica o acompanhamento de tarefas diárias com relatórios resumidos e planos de assinatura.',
           tags: ['React', 'Node.js', 'PWA', 'TailwindCSS', 'Vercel', 'AI Summary'],
           highlights: ['Daily Log Automático', 'Funciona Offline (PWA)', 'Relatórios com IA'],
+        },
+        {
+          name: 'Nuvartis',
+          domain: 'nuvartis.com',
+          url: 'https://nuvartis.com',
+          badge: 'Plataforma E-commerce',
+          description: 'Plataforma completa de e-commerce projetada para alta performance, gestão dinâmica de catálogo de produtos, checkout fluido e integração com soluções de pagamento e logística.',
+          tags: ['E-commerce', 'Full Stack', 'TailwindCSS', 'APIs', 'Pagamentos'],
+          highlights: ['Checkout Otimizado', 'Catálogo Dinâmico', 'Integração de Pagamento'],
         },
       ],
     },
@@ -90,6 +99,15 @@ export const translations = {
         mobile: 'Mobile & E-commerce',
       },
       items: [
+        {
+          title: 'Nuvartis — Plataforma E-commerce',
+          category: 'mobile',
+          date: '2026',
+          description: 'Plataforma moderna de e-commerce (nuvartis.com) focada em alta performance, gestão de catálogo de produtos, checkout otimizado e integração de pagamentos.',
+          tags: ['E-commerce', 'Full Stack', 'Web Development', 'Integrations'],
+          githubUrl: 'https://nuvartis.com',
+          linkedinUrl: 'https://www.linkedin.com/in/tiagokochem/details/projects/',
+        },
         {
           title: 'Medical Appointment Agent — LangGraph',
           category: 'ai',
@@ -369,7 +387,7 @@ export const translations = {
       ctaSecondary: 'View Projects',
       stats: [
         { number: '6+ Years', label: 'Experience' },
-        { number: '2 SaaS', label: 'Products Live' },
+        { number: '3 Platforms', label: 'Live Online' },
         { number: '20+ Projects', label: 'Delivered' },
         { number: '100% SEO', label: 'Speed & Scale' },
       ],
@@ -396,6 +414,15 @@ export const translations = {
           description: 'Daily log and standup automation tool for software engineering teams. Streamlines task tracking with AI-generated summaries and flexible subscription tiers.',
           tags: ['React', 'Node.js', 'PWA', 'TailwindCSS', 'Vercel', 'AI Summary'],
           highlights: ['Auto Daily Logs', 'Offline PWA', 'AI Reports'],
+        },
+        {
+          name: 'Nuvartis',
+          domain: 'nuvartis.com',
+          url: 'https://nuvartis.com',
+          badge: 'E-commerce Platform',
+          description: 'Complete e-commerce platform engineered for high performance, dynamic product catalog management, streamlined checkout experience, and payment/logistics integration.',
+          tags: ['E-commerce', 'Full Stack', 'TailwindCSS', 'APIs', 'Payments'],
+          highlights: ['Streamlined Checkout', 'Dynamic Catalog', 'Payment Integrations'],
         },
       ],
     },
@@ -437,6 +464,15 @@ export const translations = {
         mobile: 'Mobile & E-commerce',
       },
       items: [
+        {
+          title: 'Nuvartis — E-commerce Platform',
+          category: 'mobile',
+          date: '2026',
+          description: 'Modern e-commerce platform (nuvartis.com) focused on performance, product catalog management, streamlined checkout, and payment gateway integration.',
+          tags: ['E-commerce', 'Full Stack', 'Web Development', 'Integrations'],
+          githubUrl: 'https://nuvartis.com',
+          linkedinUrl: 'https://www.linkedin.com/in/tiagokochem/details/projects/',
+        },
         {
           title: 'Medical Appointment Agent — LangGraph',
           category: 'ai',
