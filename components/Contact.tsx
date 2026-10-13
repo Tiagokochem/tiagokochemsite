@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Language, translations } from '@/lib/translations';
-import { MessageSquare, Mail, Send, Linkedin, Github, PhoneCall, Sparkles } from 'lucide-react';
+import { Language, translations, whatsappLink } from '@/lib/translations';
+import { MessageSquare, Mail, Send, Linkedin, Github, PhoneCall, ArrowRight } from 'lucide-react';
 
 interface ContactProps {
   lang: Language;
@@ -10,19 +10,19 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ lang }) => {
   const t = translations[lang].contact;
+  const wa = translations[lang].whatsapp;
   
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: t.types[0],
+    projectTypeIdx: 0,
     message: '',
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Olá Tiago! Meu nome é ${formData.name} (${formData.email}).\nProjeto: ${formData.projectType}\nDetalhes: ${formData.message}`;
-    const encodedText = encodeURIComponent(text);
-    window.open(`https://wa.me/5545988443877?text=${encodedText}`, '_blank');
+    const text = t.formMessage(formData.name, formData.email, t.types[formData.projectTypeIdx], formData.message);
+    window.location.href = whatsappLink(text);
   };
 
   return (
@@ -49,14 +49,26 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
           <div className="lg:col-span-5 space-y-6">
             
             <div className="glass-card rounded-3xl p-8 border border-slate-800 space-y-6">
-              <h3 className="text-xl font-bold text-white">Canais Diretos de Atendimento</h3>
-              <p className="text-xs text-slate-400">
-                Atendimento rápido para novos projetos, consultoria ou contratação freelance.
+              <h3 className="text-xl font-bold text-white">{t.directTitle}</h3>
+              <p className="text-sm text-slate-400">
+                {t.directSubtitle}
               </p>
+
+              {/* Primary WhatsApp CTA */}
+              <a
+                href={whatsappLink(wa.defaultMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl shadow-emerald-950/50 flex items-center justify-center gap-2 transition-all hover:scale-[1.01]"
+              >
+                <MessageSquare className="w-5 h-5 fill-current" />
+                {t.whatsappCta}
+                <ArrowRight className="w-4 h-4" />
+              </a>
 
               {/* WhatsApp Card */}
               <a
-                href="https://wa.me/5545988443877?text=Ol%C3%A1%20Tiago%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto."
+                href={whatsappLink(wa.defaultMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 transition-all group"
@@ -65,7 +77,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
                   <PhoneCall className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="block text-xs font-semibold text-emerald-400 uppercase">WhatsApp Direto</span>
+                  <span className="block text-xs font-semibold text-emerald-400 uppercase">{t.whatsappLabel}</span>
                   <span className="text-sm font-bold text-white">+55 (45) 98844-3877</span>
                 </div>
               </a>
@@ -79,7 +91,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="block text-xs font-semibold text-brand-400 uppercase">E-mail</span>
+                  <span className="block text-xs font-semibold text-brand-400 uppercase">{t.emailLabel2}</span>
                   <span className="text-sm font-bold text-white">tiagok989@gmail.com</span>
                 </div>
               </a>
@@ -114,7 +126,10 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
           {/* Form Right */}
           <div className="lg:col-span-7">
             <form onSubmit={handleSubmit} className="glass-card rounded-3xl p-8 border border-slate-800 space-y-6">
-              <h3 className="text-xl font-bold text-white">{t.formTitle}</h3>
+              <div className="space-y-1">
+                <h3 className="text-xl font-bold text-white">{t.formTitle}</h3>
+                <p className="text-sm text-slate-400">{t.formSubtitle}</p>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -127,7 +142,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm focus:border-brand-500 focus:outline-none transition-colors"
-                    placeholder="Seu nome"
+                    placeholder={t.namePlaceholder}
                   />
                 </div>
 
@@ -151,12 +166,12 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
                   {t.projectTypeLabel}
                 </label>
                 <select
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                  value={formData.projectTypeIdx}
+                  onChange={(e) => setFormData({ ...formData, projectTypeIdx: Number(e.target.value) })}
                   className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm focus:border-brand-500 focus:outline-none transition-colors"
                 >
                   {t.types.map((type, idx) => (
-                    <option key={idx} value={type}>
+                    <option key={idx} value={idx}>
                       {type}
                     </option>
                   ))}
@@ -173,7 +188,7 @@ export const Contact: React.FC<ContactProps> = ({ lang }) => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm focus:border-brand-500 focus:outline-none transition-colors resize-none"
-                  placeholder="Descreva brevemente sua ideia, desafio ou necessidade de contratação..."
+                  placeholder={t.messagePlaceholder}
                 />
               </div>
 

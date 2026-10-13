@@ -23,16 +23,19 @@ module.exports = {
           950: '#082849',
         },
         ai: {
+          300: '#c4b5fd',
+          400: '#a78bfa',
           500: '#8b5cf6',
           600: '#7c3aed',
           700: '#6d28d9',
+          950: '#2e1065',
         },
         darkBg: '#090d16',
         darkCard: '#111827',
         darkBorder: '#1f2937',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

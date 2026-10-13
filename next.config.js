@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: true,
-    domains: ['github.com', 'raw.githubusercontent.com', 'images.unsplash.com'],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

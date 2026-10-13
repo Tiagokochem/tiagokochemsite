@@ -1,0 +1,44 @@
+# Tiago Kochem
+
+> Desenvolvedor Full Stack freelancer, com base em PHP/Laravel e Vue.js. Desenvolve sistemas web sob medida, integrações entre plataformas (e-commerce, marketplaces, ERPs, pagamentos, fretes e WhatsApp) e automações com inteligência artificial aplicada. Atende empresas no Brasil e no exterior, de forma remota, em português e inglês.
+
+Tiago desenvolve software desde 2019. Antes disso, foi sócio e gestor de operações de e-commerce por mais de 10 anos, o que ajuda a entender o lado operacional dos sistemas que constrói. Atualmente trabalha como Full Stack Developer (PHP, Laravel, Vue.js) na ShipSmart Global e atende projetos freelance.
+
+## Serviços
+
+- **Sistemas web e APIs com Laravel**: sistemas sob medida, painéis administrativos, APIs REST e GraphQL, manutenção e evolução de sistemas PHP/Laravel existentes.
+- **Integrações e automação de processos**: conexão entre plataformas que não conversam entre si, como marketplaces (Mercado Livre, Magalu, Shopee), ERPs, gateways de pagamento, transportadoras e WhatsApp; sincronização de dados e processamento em filas.
+- **Soluções com IA aplicada**: atendimento e prospecção automatizados no WhatsApp, agentes de IA com LangGraph e LangChain, busca em documentos internos (RAG) e automações com n8n.
+
+## Produtos no ar
+
+- [Nuvartis](https://nuvartis.com): plataforma de e-commerce completa com integração a marketplaces (Mercado Livre, Magalu, Shopee), cálculo de frete em tempo real (Correios, Melhor Envio e transportadoras), checkout e meios de pagamento.
+- [DevBrief](https://devbrief.online): automação de daily logs e standups para times de tecnologia, com resumos gerados por IA. PWA com suporte offline.
+
+## Projetos em destaque
+
+- [SaaS de Prospecção no WhatsApp](https://github.com/Tiagokochem/vendaprojeto): SaaS multi-tenant em que o usuário escolhe o nicho, configura a oferta e conecta o WhatsApp; o sistema usa playbooks por nicho, envia abordagens e follow-ups em fila, respeita horário comercial e feriados, responde preço, agenda e objeções, e passa leads quentes para um humano. Stack: Python, FastAPI, PostgreSQL, Evolution API, HTMX, Alpine.js, Docker, Mercado Pago.
+- [Gestão de Investimentos com Laravel 13 e Vue](https://github.com/Tiagokochem/coderockr-fullstack-test): API Laravel 13 com camada de domínio, interface Inertia/Vue, cálculo de rendimento e imposto, resgate idempotente, testes e CI.
+- [Agente de Cotação de Seguros](https://github.com/Tiagokochem/namastex-fde-challenge): agente de IA que qualifica leads de seguro, consulta uma API de cotação e decide quando passar para um vendedor humano, com tratamento de falhas.
+
+## Outros projetos
+
+- [Agente Autônomo com MCP](https://github.com/Tiagokochem/autonomous-langchain-mcp-filesystem): LangGraph e Model Context Protocol para manipular arquivos, CSV e MongoDB.
+- [Agente de Agendamento de Consultas](https://github.com/Tiagokochem/medical-appointment-langgraph): agente LangGraph com Fastify, Zod e SQLite.
+- [AI Code Reviewer](https://github.com/Tiagokochem/ai-code-reviewer): revisão de código com IA (React, Go, OpenAI, n8n).
+- [Integração Shopify com Laravel](https://github.com/Tiagokochem/shopifyintegration): sincronização bidirecional com GraphQL e filas Redis.
+- [Entrega Express](https://github.com/Tiagokochem/entregaexpress): sistema de entregas com Laravel 12, Vue 3 e Inertia.
+- [Pixeat](https://github.com/Tiagokochem/pixeat): API Laravel e app Flutter.
+
+## Tecnologias principais
+
+PHP, Laravel, Vue.js, Inertia.js, Python, FastAPI, Node.js, TypeScript, React, PostgreSQL, MySQL, Redis, RabbitMQ, Docker, LangGraph, LangChain, OpenAI, n8n, Evolution API (WhatsApp).
+
+## Contato
+
+- Site: https://tiagokochemsite.vercel.app
+- WhatsApp: +55 45 98844-3877 (https://wa.me/5545988443877)
+- E-mail: tiagok989@gmail.com
+- LinkedIn: https://www.linkedin.com/in/tiagokochem
+- GitHub: https://github.com/Tiagokochem
+- Localização: Marechal Cândido Rondon, Paraná, Brasil (trabalho remoto)

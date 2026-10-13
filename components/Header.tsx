@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Language, translations } from '@/lib/translations';
-import { Globe, FileText, Send, Menu, X, Sparkles } from 'lucide-react';
+import { Language, translations, whatsappLink } from '@/lib/translations';
+import { FileText, Send, Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   lang: Language;
@@ -14,6 +14,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const t = translations[lang].nav;
+  const wa = translations[lang].whatsapp;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,10 +27,9 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
   const navLinks = [
     { href: '#servicos', label: t.services },
     { href: '#saas', label: t.saas },
-    { href: '#portfolio', label: t.portfolio },
+    { href: '#projetos', label: t.portfolio },
     { href: '#trajetoria', label: t.experience },
     { href: '#skills', label: t.skills },
-    { href: '#formacao', label: t.education },
     { href: '#contato', label: t.contact },
   ];
 
@@ -46,19 +46,19 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
             <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-brand-400 transition-colors">
               Tiago Kochem
             </span>
-            <span className="block text-[10px] font-semibold tracking-wider text-slate-400 uppercase">
-              AI & Software Studio
+            <span className="hidden sm:block text-[10px] font-semibold tracking-wider text-slate-400 uppercase whitespace-nowrap">
+              {t.tagline}
             </span>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-brand-400 transition-colors py-1"
+              className="text-sm font-medium text-slate-300 hover:text-brand-400 transition-colors py-1 whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -95,8 +95,10 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
 
           {/* Request Proposal CTA */}
           <a
-            href="#contato"
-            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-ai-600 hover:from-brand-500 hover:to-ai-500 shadow-lg shadow-brand-600/25 transition-all hover:scale-[1.02]"
+            href={whatsappLink(wa.defaultMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-lg shadow-emerald-900/25 transition-all hover:scale-[1.02]"
           >
             <Send className="w-3.5 h-3.5" />
             {t.requestProposal}
@@ -104,8 +106,8 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <div className="flex items-center bg-slate-900 border border-slate-800 rounded-full p-0.5 text-xs mr-2">
+        <div className="flex items-center gap-2 xl:hidden">
+          <div className="flex lg:hidden items-center bg-slate-900 border border-slate-800 rounded-full p-0.5 text-xs mr-2">
             <button
               onClick={() => setLang('pt')}
               className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${lang === 'pt' ? 'bg-brand-600 text-white' : 'text-slate-400'}`}
@@ -122,6 +124,8 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+            aria-expanded={mobileMenuOpen}
             className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -131,7 +135,7 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-card border-t border-slate-800 px-6 py-6 space-y-4">
+        <div className="xl:hidden glass-card border-t border-slate-800 px-6 py-6 space-y-4">
           <nav className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a
@@ -158,9 +162,11 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
             </button>
 
             <a
-              href="#contato"
+              href={whatsappLink(wa.defaultMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-brand-600 to-ai-600 shadow-lg"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 shadow-lg"
             >
               <Send className="w-4 h-4" />
               {t.requestProposal}

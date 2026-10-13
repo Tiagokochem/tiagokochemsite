@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Language } from '@/lib/translations';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Services } from '@/components/Services';
+import { FeaturedProjects } from '@/components/FeaturedProjects';
 import { SaaSShowcase } from '@/components/SaaSShowcase';
 import { PortfolioGrid } from '@/components/PortfolioGrid';
 import { Experience } from '@/components/Experience';
@@ -16,6 +17,10 @@ import { CVModal } from '@/components/CVModal';
 export default function Home() {
   const [lang, setLang] = useState<Language>('pt');
   const [isCVOpen, setIsCVOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+  }, [lang]);
 
   return (
     <main className="min-h-screen bg-[#090d16] text-slate-100 relative selection:bg-brand-500 selection:text-white">
@@ -33,10 +38,13 @@ export default function Home() {
       {/* Services for Clients / Freelance */}
       <Services lang={lang} />
 
-      {/* In-House SaaS Products (PagRent & DevBrief) */}
+      {/* Own Live Products (Nuvartis featured, DevBrief) */}
       <SaaSShowcase lang={lang} />
 
-      {/* Featured Projects Portfolio */}
+      {/* Featured Case Studies */}
+      <FeaturedProjects lang={lang} />
+
+      {/* Other Projects (collapsed) */}
       <PortfolioGrid lang={lang} />
 
       {/* Professional Career Experience */}
@@ -61,8 +69,8 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 border-t border-slate-900 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Tiago Kochem — AI & Software Studio. todos os direitos reservados.</p>
-          <p className="text-slate-600 font-mono">Next.js 14 • Node.js • Tailored SEO • Vercel Ready</p>
+          <p>© {new Date().getFullYear()} Tiago Kochem | {lang === 'pt' ? 'Desenvolvimento de sistemas, integrações e automação.' : 'Custom software, integrations, and automation.'}</p>
+          <p className="text-slate-600">tiagok989@gmail.com • +55 (45) 98844-3877</p>
         </div>
       </footer>
 

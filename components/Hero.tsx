@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Language, translations } from '@/lib/translations';
-import { MessageSquare, ArrowRight, Github, Linkedin, Mail, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Language, translations, whatsappLink } from '@/lib/translations';
+import { MessageSquare, ArrowRight, Github, Linkedin, Mail, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 interface HeroProps {
   lang: Language;
@@ -11,6 +11,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ lang }) => {
   const t = translations[lang].hero;
+  const wa = translations[lang].whatsapp;
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
@@ -31,27 +32,34 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              <span className="block font-sans text-slate-100">Tiago Kochem</span>
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-blue-400 to-ai-400">
                 {t.titleHighlight}
               </span>
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-lg sm:text-xl font-medium text-slate-300">
-              {t.titleSub}
-            </p>
-
             {/* Description */}
-            <p className="text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               {t.description}
             </p>
+
+            {/* Service Pillars */}
+            <ul className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3">
+              {t.pillars.map((pillar) => (
+                <li
+                  key={pillar}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs sm:text-sm font-medium text-slate-200"
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  {pillar}
+                </li>
+              ))}
+            </ul>
 
             {/* CTA Buttons */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <a
-                href="https://wa.me/5545988443877?text=Ol%C3%A1%20Tiago%2C%20gostaria%20de%20conversar%20sobre%20um%20projeto%20freelance%20%2F%20consultoria."
+                href={whatsappLink(wa.defaultMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-xl shadow-emerald-950/50 hover:shadow-emerald-600/30 transition-all flex items-center justify-center gap-3 hover:scale-[1.02]"
@@ -68,6 +76,10 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 <ArrowRight className="w-4 h-4 text-brand-400" />
               </a>
             </div>
+
+            <p className="text-xs sm:text-sm text-slate-500">
+              {t.ctaNote}
+            </p>
 
             {/* Social Shortcuts */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-4 text-slate-400">
@@ -112,8 +124,9 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900">
                   <Image
                     src="/profile.jpg"
-                    alt="Tiago Kochem - AI Engineer & Full Stack Developer"
+                    alt="Tiago Kochem - Desenvolvedor Full Stack"
                     fill
+                    sizes="(max-width: 640px) 90vw, 384px"
                     className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     priority
                   />
@@ -123,10 +136,10 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
                 {/* Card Tag Below Image */}
                 <div className="pt-4 pb-1 text-center space-y-1">
                   <h3 className="font-bold text-white text-lg">Tiago Kochem</h3>
-                  <p className="text-xs text-brand-400 font-semibold">PHP / Laravel • AI Engineering • Next.js</p>
+                  <p className="text-xs text-brand-400 font-semibold">{t.cardRole}</p>
                   <div className="flex items-center justify-center gap-1 text-[11px] text-slate-400 pt-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>Full Stack & AI Engineer Specialist</span>
+                    <span>{t.cardTagline}</span>
                   </div>
                 </div>
               </div>
@@ -134,24 +147,6 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
           </div>
 
         </div>
-
-        {/* Stats Grid */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {t.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="glass-card p-6 rounded-2xl border border-slate-800/80 text-center hover:border-brand-500/40 transition-all hover:-translate-y-1"
-            >
-              <div className="text-3xl sm:text-4xl font-extrabold text-white bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-ai-400">
-                {stat.number}
-              </div>
-              <div className="text-xs sm:text-sm font-medium text-slate-400 mt-1">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
       </div>
     </section>
   );

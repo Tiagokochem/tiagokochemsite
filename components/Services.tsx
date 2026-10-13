@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Language, translations } from '@/lib/translations';
-import { Bot, Code, Zap, ShoppingCart, ArrowRight } from 'lucide-react';
+import { Language, translations, whatsappLink } from '@/lib/translations';
+import { Bot, Code, Plug, ArrowRight, Check } from 'lucide-react';
 
 interface ServicesProps {
   lang: Language;
@@ -10,17 +10,14 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ lang }) => {
   const t = translations[lang].services;
+  const wa = translations[lang].whatsapp;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case 'Bot':
         return <Bot className="w-6 h-6 text-ai-400" />;
-      case 'Code':
-        return <Code className="w-6 h-6 text-brand-400" />;
-      case 'Zap':
-        return <Zap className="w-6 h-6 text-amber-400" />;
-      case 'ShoppingCart':
-        return <ShoppingCart className="w-6 h-6 text-emerald-400" />;
+      case 'Plug':
+        return <Plug className="w-6 h-6 text-emerald-400" />;
       default:
         return <Code className="w-6 h-6 text-brand-400" />;
     }
@@ -44,7 +41,7 @@ export const Services: React.FC<ServicesProps> = ({ lang }) => {
         </div>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {t.items.map((item, idx) => (
             <div
               key={idx}
@@ -59,17 +56,28 @@ export const Services: React.FC<ServicesProps> = ({ lang }) => {
                   {item.title}
                 </h3>
 
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
+
+                <ul className="space-y-2">
+                  {item.examples.map((example) => (
+                    <li key={example} className="flex items-center gap-2 text-xs text-slate-300">
+                      <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      {example}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="pt-6 mt-4 border-t border-slate-800/60">
                 <a
-                  href="#contato"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-400 hover:text-brand-300 transition-colors"
+                  href={whatsappLink(`${wa.serviceMessage}${item.title}.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
                 >
-                  <span>Solicitar Orçamento</span>
+                  <span>{t.ctaLabel}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
