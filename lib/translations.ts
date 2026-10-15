@@ -6,6 +6,10 @@ export const WHATSAPP_NUMBER = '5545988443877';
 export const whatsappLink = (text: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
+export const AI_TWIN_URL = 'https://tiago-ai.148-72-153-41.sslip.io';
+
+export const aiTwinLink = (lang: Language) => `${AI_TWIN_URL}/${lang}`;
+
 export const translations = {
   pt: {
     nav: {
@@ -18,6 +22,7 @@ export const translations = {
       contact: 'Contato',
       requestProposal: 'Falar no WhatsApp',
       viewCV: 'Ver Currículo',
+      aiInterview: 'Entreviste meu agente de IA',
       tagline: 'Sistemas • Integrações • Automação',
     },
     whatsapp: {
@@ -32,6 +37,9 @@ export const translations = {
       ctaPrimary: 'Conversar sobre meu projeto',
       ctaSecondary: 'Ver projetos',
       ctaNote: 'Me conte o que você precisa. Avalio o escopo e conversamos sobre uma solução.',
+      aiTitle: 'Me entreviste com meu agente de IA',
+      aiSubtitle: 'Criei um agente de IA que responde recrutadores sobre minhas skills, experiência e projetos, por texto ou voz, sempre citando as fontes.',
+      aiStack: ['LangGraph', 'RAG + pgvector', 'FastAPI', 'OpenAI', 'Next.js'],
       cardRole: 'PHP / Laravel • APIs • IA aplicada',
       cardTagline: 'Desenvolvedor Full Stack',
     },
@@ -447,6 +455,7 @@ export const translations = {
       contact: 'Contact',
       requestProposal: 'Chat on WhatsApp',
       viewCV: 'View Resume',
+      aiInterview: 'Interview my AI agent',
       tagline: 'Systems • Integrations • Automation',
     },
     whatsapp: {
@@ -461,6 +470,9 @@ export const translations = {
       ctaPrimary: 'Talk about my project',
       ctaSecondary: 'View projects',
       ctaNote: 'Tell me what you need. I will review the scope and we can discuss a solution.',
+      aiTitle: 'Interview me through my AI agent',
+      aiSubtitle: 'I built an AI agent that answers recruiters about my skills, experience and projects, by text or voice, always citing its sources.',
+      aiStack: ['LangGraph', 'RAG + pgvector', 'FastAPI', 'OpenAI', 'Next.js'],
       cardRole: 'PHP / Laravel • APIs • Applied AI',
       cardTagline: 'Full Stack Developer',
     },

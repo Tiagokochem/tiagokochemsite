@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Language, translations, whatsappLink } from '@/lib/translations';
-import { FileText, Send, Menu, X } from 'lucide-react';
+import { Language, aiTwinLink, translations, whatsappLink } from '@/lib/translations';
+import { FileText, Send, Menu, X, Bot } from 'lucide-react';
 
 interface HeaderProps {
   lang: Language;
@@ -93,6 +93,17 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
             {t.viewCV}
           </button>
 
+          {/* AI Interview */}
+          <a
+            href={aiTwinLink(lang)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden 2xl:flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-600 to-ai-600 hover:from-brand-500 hover:to-ai-500 shadow-lg shadow-ai-950/40 transition-all hover:scale-[1.02] whitespace-nowrap"
+          >
+            <Bot className="w-4 h-4" />
+            {t.aiInterview}
+          </a>
+
           {/* Request Proposal CTA */}
           <a
             href={whatsappLink(wa.defaultMessage)}
@@ -160,6 +171,17 @@ export const Header: React.FC<HeaderProps> = ({ lang, setLang, onOpenCV }) => {
               <FileText className="w-4 h-4 text-brand-400" />
               {t.viewCV}
             </button>
+
+            <a
+              href={aiTwinLink(lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-brand-600 to-ai-600 shadow-lg"
+            >
+              <Bot className="w-4 h-4" />
+              {t.aiInterview}
+            </a>
 
             <a
               href={whatsappLink(wa.defaultMessage)}

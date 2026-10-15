@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Language, translations, whatsappLink } from '@/lib/translations';
-import { MessageSquare, ArrowRight, Github, Linkedin, Mail, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Language, aiTwinLink, translations, whatsappLink } from '@/lib/translations';
+import { MessageSquare, ArrowRight, Github, Linkedin, Mail, CheckCircle2, ShieldCheck, Bot, Sparkles } from 'lucide-react';
 
 interface HeroProps {
   lang: Language;
@@ -80,6 +80,41 @@ export const Hero: React.FC<HeroProps> = ({ lang }) => {
             <p className="text-xs sm:text-sm text-slate-500">
               {t.ctaNote}
             </p>
+
+            {/* AI Interview CTA */}
+            <a
+              href={aiTwinLink(lang)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block max-w-xl mx-auto lg:mx-0 rounded-2xl p-[1px] bg-gradient-to-r from-brand-500 via-ai-500 to-emerald-500 shadow-xl shadow-ai-950/40 transition-all hover:scale-[1.01] hover:shadow-ai-600/30"
+            >
+              <div className="flex items-center gap-4 rounded-2xl bg-slate-950/90 px-5 py-4 text-left backdrop-blur-md">
+                <div className="relative shrink-0">
+                  <div className="absolute inset-0 rounded-xl bg-ai-500/40 blur-md animate-pulse" />
+                  <div className="relative w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-ai-500 flex items-center justify-center">
+                    <Bot className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-bold text-white text-sm sm:text-base">
+                    {t.aiTitle}
+                    <Sparkles className="inline w-4 h-4 ml-1.5 -mt-0.5 text-ai-400" />
+                  </p>
+                  <p className="text-xs sm:text-sm text-slate-400 leading-snug">{t.aiSubtitle}</p>
+                  <ul className="mt-2 flex flex-wrap gap-1.5">
+                    {t.aiStack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="px-2 py-0.5 rounded-md bg-ai-950/60 border border-ai-500/30 text-[10px] sm:text-[11px] font-semibold text-ai-300"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <ArrowRight className="w-5 h-5 shrink-0 text-ai-400 transition-transform group-hover:translate-x-1" />
+              </div>
+            </a>
 
             {/* Social Shortcuts */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-4 text-slate-400">
